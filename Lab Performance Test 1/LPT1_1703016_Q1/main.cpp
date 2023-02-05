@@ -1,3 +1,6 @@
+// Q1. Show an OpenGL Program which will show a red isosceles triangle.
+// roll: 1703016
+
 #include "glad.h"
 #include "glfw3.h"
 
@@ -103,7 +106,7 @@ int main()
     float vertices[] = {
         -0.5f, -0.5f, 0.0f, // left  
          0.5f, -0.5f, 0.0f, // right 
-         0.0f,  0.5f, 0.0f,  // top   
+         0.0f,  1.0f, 0.0f,  // top   
     }; 
 
     unsigned int VBO, VAO;
