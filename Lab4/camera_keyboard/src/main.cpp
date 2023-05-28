@@ -279,14 +279,18 @@ void processInput(GLFWwindow *window)
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
 
-    float cameraSpeed = static_cast<float>(2.5 * deltaTime);
-    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+    float cameraSpeed = static_cast<float>(2.5 * deltaTime);  // update camera speed here
+    
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)  // key 'W' for forward movement, hence the plus sign
         cameraPos += cameraSpeed * cameraFront;
-    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+    
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)  // key 'S' for backward movement, hence the minus sign
         cameraPos -= cameraSpeed * cameraFront;
-    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+    
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)  // key 'A' for leftward movement, hence the minus sign
         cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
-    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+    
+    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)  // key 'D' for rightward movement, hence the plus sign
         cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
 }
 
